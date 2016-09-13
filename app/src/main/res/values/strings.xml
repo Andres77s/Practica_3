@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Practica 3</string>
+    <string name="miperfil">Mi perfil</string>
+    <string name="principal">Principal</string>
+    <string name="title_activity_main">MainActivity</string>
+
+</resources>

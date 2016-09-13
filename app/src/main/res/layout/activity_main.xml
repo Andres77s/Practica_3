@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.andresvanegas.practica3.MainActivity"
+    android:background="@mipmap/publi2"
+    android:weightSum="1">
+
+    <ImageView
+        android:layout_width="215dp"
+        android:layout_height="280dp"
+        android:id="@+id/imageView2"
+        android:background="@mipmap/publi"
+        android:layout_weight="0.37"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>
