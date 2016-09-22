@@ -7,14 +7,14 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@mipmap/pastizzeria"
+    android:background="@drawable/pastizzeria"
     tools:context="com.andresvanegas.practica3.PerfilActivity">
 
     <ImageView
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:id="@+id/imageView3"
-        android:background="@mipmap/perfil"
+        android:background="@drawable/perfil"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="36dp" />

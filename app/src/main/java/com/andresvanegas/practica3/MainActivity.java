@@ -41,7 +41,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.menu_main:
                 break;
-
+            case R.id.menu_carta:
+                Intent carta = new Intent(MainActivity.this, clasificacionActivity.class);
+                startActivity(carta);
+                finish();
 
         }
         return true;

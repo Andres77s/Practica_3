@@ -1,0 +1,705 @@
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/misc.xml	(revision 3f1e8851df093f68362b571e22d936d56f4bdc1a)
++++ .idea/misc.xml	(revision )
+@@ -37,7 +37,7 @@
+     <ConfirmationsSetting value="0" id="Add" />
+     <ConfirmationsSetting value="0" id="Remove" />
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" default="true" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/build/classes" />
+   </component>
+   <component name="ProjectType">
+\ No newline at end of file
+Index: app/src/main/java/com/andresvanegas/practica3/LogginActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/andresvanegas/practica3/LogginActivity.java	(revision 3f1e8851df093f68362b571e22d936d56f4bdc1a)
++++ app/src/main/java/com/andresvanegas/practica3/LogginActivity.java	(revision )
+@@ -5,6 +5,7 @@
+ import android.os.Bundle;
+ import android.util.Log;
+ import android.view.View;
++import android.view.Window;
+ import android.widget.Button;
+ import android.widget.EditText;
+ import android.widget.Toast;
+@@ -20,6 +21,7 @@
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
++        this.supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
+         setContentView(R.layout.activity_loggin);
+ 
+         registrar = (Button) findViewById(R.id.bregistrar);
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/strings.xml	(revision 3f1e8851df093f68362b571e22d936d56f4bdc1a)
++++ app/src/main/res/values/strings.xml	(revision )
+@@ -1,7 +1,11 @@
+ <resources>
+-    <string name="app_name">Practica 3</string>
++    <string name="app_name">La Pastizzeria</string>
+     <string name="miperfil">Mi perfil</string>
+     <string name="principal">Principal</string>
++    <string name="clasificacion">Carta</string>
+     <string name="title_activity_main">MainActivity</string>
++
++    <!-- TODO: Remove or change this placeholder text -->
++    <string name="hello_blank_fragment">Hello blank fragment</string>
+ 
+ </resources>
+Index: app/src/main/res/layout/fragment_pastas.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/fragment_pastas.xml	(revision )
++++ app/src/main/res/layout/fragment_pastas.xml	(revision )
+@@ -0,0 +1,34 @@
++<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context="com.andresvanegas.practica3.PastasFragment">
++
++    <!-- TODO: Update blank fragment layout -->
++
++
++    <ImageView
++        android:layout_width="match_parent"
++        android:layout_height="150dp"
++        android:id="@+id/p1"
++        android:layout_gravity="center_horizontal|top"
++        android:background="@drawable/pasta" />
++
++    <TextView
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="PASTA"
++        android:textSize="50dp"
++        android:id="@+id/Tpasta"
++        android:layout_gravity="left|top"
++        android:textStyle="bold|italic"
++        android:textColor="#d83e46" />
++
++    <ImageView
++        android:layout_width="match_parent"
++        android:layout_height="380dp"
++        android:id="@+id/M1"
++        android:background="@drawable/pas"
++        android:layout_gravity="center_horizontal|bottom" />
++
++</FrameLayout>
+Index: app/src/main/res/menu/menu_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/menu/menu_main.xml	(revision 3f1e8851df093f68362b571e22d936d56f4bdc1a)
++++ app/src/main/res/menu/menu_main.xml	(revision )
+@@ -9,5 +9,8 @@
+     <item
+         android:id="@+id/menu_main"
+         android:title="@string/principal"/>
++    <item
++        android:id="@+id/menu_carta"
++        android:title="@string/clasificacion"/>
+ 
+ </menu>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_de_tomar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/fragment_de_tomar.xml	(revision )
++++ app/src/main/res/layout/fragment_de_tomar.xml	(revision )
+@@ -0,0 +1,29 @@
++<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context="com.andresvanegas.practica3.DeTomarFragment">
++
++    <!-- TODO: Update blank fragment layout -->
++    <ImageView
++        android:layout_width="wrap_content"
++        android:layout_height="150dp"
++        android:id="@+id/imageView4"
++        android:background="@drawable/tomar"
++        android:layout_gravity="center_horizontal|top" />
++
++    <TextView
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:textSize="50sp"
++        android:textStyle="bold|italic"
++        android:textColor="#d83e46"
++        android:text="DE TOMAR" />
++
++    <ImageView
++        android:layout_width="match_parent"
++        android:layout_height="380dp"
++        android:id="@+id/imageView5"
++        android:background="@drawable/jugo"
++        android:layout_gravity="center_horizontal|bottom" />
++</FrameLayout>
+Index: app/src/main/res/layout/activity_registro.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_registro.xml	(revision 3f1e8851df093f68362b571e22d936d56f4bdc1a)
++++ app/src/main/res/layout/activity_registro.xml	(revision )
+@@ -7,7 +7,7 @@
+     android:paddingLeft="@dimen/activity_horizontal_margin"
+     android:paddingRight="@dimen/activity_horizontal_margin"
+     android:paddingTop="@dimen/activity_vertical_margin"
+-    android:background="@mipmap/loggin"
++    android:background="@drawable/loggin"
+     tools:context="com.andresvanegas.practica3.registroActivity">
+ 
+ 
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/vcs.xml	(revision )
++++ .idea/vcs.xml	(revision )
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/java/com/andresvanegas/practica3/PastasFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/andresvanegas/practica3/PastasFragment.java	(revision )
++++ app/src/main/java/com/andresvanegas/practica3/PastasFragment.java	(revision )
+@@ -0,0 +1,33 @@
++package com.andresvanegas.practica3;
++
++
++
++import android.os.Bundle;
++import android.support.v4.app.Fragment;
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++
++
++/**
++ * A simple {@link Fragment} subclass.
++ *
++ */
++public class PastasFragment extends Fragment {
++
++
++
++    public PastasFragment() {
++        // Required empty public constructor
++    }
++
++
++    @Override
++    public View onCreateView(LayoutInflater inflater, ViewGroup container,
++                             Bundle savedInstanceState) {
++        // Inflate the layout for this fragment
++        final View view = inflater.inflate(R.layout.fragment_pastas, container, false);
++        return view;
++    }
++
++}
+Index: app/src/main/res/layout/activity_perfil.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_perfil.xml	(revision 3f1e8851df093f68362b571e22d936d56f4bdc1a)
++++ app/src/main/res/layout/activity_perfil.xml	(revision )
+@@ -7,14 +7,14 @@
+     android:paddingLeft="@dimen/activity_horizontal_margin"
+     android:paddingRight="@dimen/activity_horizontal_margin"
+     android:paddingTop="@dimen/activity_vertical_margin"
+-    android:background="@mipmap/pastizzeria"
++    android:background="@drawable/pastizzeria"
+     tools:context="com.andresvanegas.practica3.PerfilActivity">
+ 
+     <ImageView
+         android:layout_width="200dp"
+         android:layout_height="200dp"
+         android:id="@+id/imageView3"
+-        android:background="@mipmap/perfil"
++        android:background="@drawable/perfil"
+         android:layout_alignParentTop="true"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="36dp" />
+Index: app/src/main/java/com/andresvanegas/practica3/clasificacionActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/andresvanegas/practica3/clasificacionActivity.java	(revision )
++++ app/src/main/java/com/andresvanegas/practica3/clasificacionActivity.java	(revision )
+@@ -0,0 +1,94 @@
++package com.andresvanegas.practica3;
++
++import android.app.FragmentManager;
++import android.support.v4.app.Fragment;
++import android.support.v4.app.FragmentActivity;
++import android.app.FragmentTransaction;
++import android.support.v4.app.FragmentPagerAdapter;
++import android.support.v4.view.PagerAdapter;
++import android.support.v4.view.ViewPager;
++import android.support.v7.app.ActionBar;
++import android.support.v7.app.AppCompatActivity;
++import android.os.Bundle;
++
++public class clasificacionActivity extends AppCompatActivity {
++
++    private ViewPager mViewPager;
++    private ActionBar actionBar;
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_clasificacion);
++
++        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
++        mViewPager = (ViewPager) findViewById(R.id.pager);
++        mViewPager.setAdapter(pagerAdapter);
++
++        actionBar = getSupportActionBar();
++        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
++
++        ActionBar.TabListener tabListener = new ActionBar.TabListener(){
++
++            @Override
++            public void onTabSelected(ActionBar.Tab tab, android.support.v4.app.FragmentTransaction ft) {
++                mViewPager.setCurrentItem(tab.getPosition());
++            }
++
++            @Override
++            public void onTabUnselected(ActionBar.Tab tab, android.support.v4.app.FragmentTransaction ft) {
++
++            }
++
++            @Override
++            public void onTabReselected(ActionBar.Tab tab, android.support.v4.app.FragmentTransaction ft) {
++
++            }
++
++        };
++
++        ActionBar.Tab tab = actionBar.newTab().setText("Pastas").setTabListener(tabListener);
++        actionBar.addTab(tab);
++
++        tab = actionBar.newTab().setText("Pizzas").setTabListener(tabListener);
++        actionBar.addTab(tab);
++
++        tab = actionBar.newTab().setText("De Tomar").setTabListener(tabListener);
++        actionBar.addTab(tab);
++
++        mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener(){
++            public void onPageSelected(int position){
++                getSupportActionBar().setSelectedNavigationItem(position);
++            }
++        });
++
++        /*FragmentManager fm = getFragmentManager();
++        FragmentTransaction ft = fm.beginTransaction();
++
++        PastasFragment fragment = new PastasFragment();
++        ft.add(android.R.id.content, fragment).commit();*/
++    }
++    public class PagerAdapter extends FragmentPagerAdapter{
++
++        public PagerAdapter(android.support.v4.app.FragmentManager fm) {
++            super(fm);
++        }
++
++        @Override
++        public Fragment getItem(int position) {
++            switch (position){
++                case 0: return new PastasFragment();
++                case 1: return new PizaasFragment();
++                case 2: return new DeTomarFragment();
++            }
++            return null;
++        }
++
++        @Override
++        public int getCount() {
++            return 3;
++        }
++    }
++
++}
++
+Index: app/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/colors.xml	(revision 3f1e8851df093f68362b571e22d936d56f4bdc1a)
++++ app/src/main/res/values/colors.xml	(revision )
+@@ -1,8 +1,8 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <resources>
+-	<color name="colorPrimary">#3F51B5</color>
++	<color name="colorPrimary">#d52e37</color>
+     <color name="colorPrimaryDark">#303F9F</color>
+-    <color name="colorAccent">#FF4081</color>
++    <color name="colorAccent">#fcfbfb</color>
+ 	<item name="black" type="color">#000000</item>   
+ 	<item name="navy" type="color">	#000080</item>   
+ 	<item name="darkblue" type="color">#00008b</item>
+Index: app/src/main/res/layout/activity_clasificacion.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_clasificacion.xml	(revision )
++++ app/src/main/res/layout/activity_clasificacion.xml	(revision )
+@@ -0,0 +1,19 @@
++<?xml version="1.0" encoding="utf-8"?>
++<android.support.v4.view.ViewPager
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:id="@+id/pager"
++    tools:context="com.andresvanegas.practica3.clasificacionActivity">
++
++    <fragment
++
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:name="com.andresvanegas.practica3.PastasFragment"
++        android:layout_weight="1"
++        android:id="@+id/fpasta"
++        tools:layout="@layout/fragment_pastas" />
++
++</android.support.v4.view.ViewPager>
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/build.gradle	(revision 3f1e8851df093f68362b571e22d936d56f4bdc1a)
++++ app/build.gradle	(revision )
+@@ -13,7 +13,7 @@
+     }
+     buildTypes {
+         release {
+-            minifyEnabled false
++            minifyEnabled true
+             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+         }
+     }
+@@ -24,4 +24,5 @@
+     testCompile 'junit:junit:4.12'
+     compile 'com.android.support:appcompat-v7:24.2.0'
+     compile 'com.android.support:design:24.2.0'
++    compile 'com.android.support:support-v4:24.2.0'
+ }
+Index: app/src/main/java/com/andresvanegas/practica3/PerfilActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/andresvanegas/practica3/PerfilActivity.java	(revision 3f1e8851df093f68362b571e22d936d56f4bdc1a)
++++ app/src/main/java/com/andresvanegas/practica3/PerfilActivity.java	(revision )
+@@ -7,6 +7,7 @@
+ import android.view.Menu;
+ import android.view.MenuItem;
+ import android.view.View;
++import android.view.Window;
+ import android.widget.TextView;
+ import android.widget.Toast;
+ 
+\ No newline at end of file
+Index: app/src/main/java/com/andresvanegas/practica3/PizaasFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/andresvanegas/practica3/PizaasFragment.java	(revision )
++++ app/src/main/java/com/andresvanegas/practica3/PizaasFragment.java	(revision )
+@@ -0,0 +1,29 @@
++package com.andresvanegas.practica3;
++
++
++import android.os.Bundle;
++import android.support.v4.app.Fragment;
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++
++
++/**
++ * A simple {@link Fragment} subclass.
++ */
++public class PizaasFragment extends Fragment {
++
++
++    public PizaasFragment() {
++        // Required empty public constructor
++    }
++
++
++    @Override
++    public View onCreateView(LayoutInflater inflater, ViewGroup container,
++                             Bundle savedInstanceState) {
++        // Inflate the layout for this fragment
++        return inflater.inflate(R.layout.fragment_pizaas, container, false);
++    }
++
++}
+Index: app/src/main/java/com/andresvanegas/practica3/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/andresvanegas/practica3/MainActivity.java	(revision 3f1e8851df093f68362b571e22d936d56f4bdc1a)
++++ app/src/main/java/com/andresvanegas/practica3/MainActivity.java	(revision )
+@@ -41,6 +41,10 @@
+                 break;
+             case R.id.menu_main:
+                 break;
++            case R.id.menu_carta:
++                Intent carta = new Intent(MainActivity.this, clasificacionActivity.class);
++                startActivity(carta);
++                //finish();
+ 
+ 
+         }
+Index: app/src/main/res/layout/fragment_pizaas.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/fragment_pizaas.xml	(revision )
++++ app/src/main/res/layout/fragment_pizaas.xml	(revision )
+@@ -0,0 +1,30 @@
++<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context="com.andresvanegas.practica3.PizaasFragment">
++
++    <!-- TODO: Update blank fragment layout -->
++
++    <ImageView
++        android:layout_width="wrap_content"
++        android:layout_height="150dp"
++        android:id="@+id/imageView4"
++        android:background="@drawable/pizzas"
++        android:layout_gravity="center_horizontal|top" />
++
++    <TextView
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:textSize="50sp"
++        android:textStyle="bold|italic"
++        android:textColor="#d83e46"
++        android:text="PIZZAS" />
++
++    <ImageView
++        android:layout_width="match_parent"
++        android:layout_height="380dp"
++        android:id="@+id/imageView5"
++        android:background="@drawable/piz"
++        android:layout_gravity="center_horizontal|bottom" />
++</FrameLayout>
+Index: app/src/main/java/com/andresvanegas/practica3/splash.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/andresvanegas/practica3/splash.java	(revision 3f1e8851df093f68362b571e22d936d56f4bdc1a)
++++ app/src/main/java/com/andresvanegas/practica3/splash.java	(revision )
+@@ -4,11 +4,13 @@
+ import android.os.Handler;
+ import android.support.v7.app.AppCompatActivity;
+ import android.os.Bundle;
++import android.view.Window;
+ 
+ public class splash extends AppCompatActivity {
+ 
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
++        this.supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_splash);
+ 
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/AndroidManifest.xml	(revision 3f1e8851df093f68362b571e22d936d56f4bdc1a)
++++ app/src/main/AndroidManifest.xml	(revision )
+@@ -19,14 +19,16 @@
+         <activity android:name=".registroActivity" />
+         <activity
+             android:name=".MainActivity"
+-            android:label="@string/title_activity_main">
++            android:label="Publicidad">
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+ 
+-                <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+         </activity>
+-        <activity android:name=".PerfilActivity"></activity>
++        <activity android:name=".PerfilActivity"
++            android:label="Mi Perfil"/>
++        <activity android:name=".clasificacionActivity"
++            android:label="Carta"></activity>
+     </application>
+ 
+ </manifest>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_splash.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_splash.xml	(revision 3f1e8851df093f68362b571e22d936d56f4bdc1a)
++++ app/src/main/res/layout/activity_splash.xml	(revision )
+@@ -3,7 +3,7 @@
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    android:background="@mipmap/splash"
++    android:background="@drawable/splash"
+     tools:context="com.andresvanegas.practica3.splash">
+ 
+ </RelativeLayout>
+Index: app/src/main/java/com/andresvanegas/practica3/DeTomarFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/andresvanegas/practica3/DeTomarFragment.java	(revision )
++++ app/src/main/java/com/andresvanegas/practica3/DeTomarFragment.java	(revision )
+@@ -0,0 +1,29 @@
++package com.andresvanegas.practica3;
++
++
++import android.os.Bundle;
++import android.support.v4.app.Fragment;
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++
++
++/**
++ * A simple {@link Fragment} subclass.
++ */
++public class DeTomarFragment extends Fragment {
++
++
++    public DeTomarFragment() {
++        // Required empty public constructor
++    }
++
++
++    @Override
++    public View onCreateView(LayoutInflater inflater, ViewGroup container,
++                             Bundle savedInstanceState) {
++        // Inflate the layout for this fragment
++        return inflater.inflate(R.layout.fragment_de_tomar, container, false);
++    }
++
++}
+Index: app/src/main/java/com/andresvanegas/practica3/registroActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/andresvanegas/practica3/registroActivity.java	(revision 3f1e8851df093f68362b571e22d936d56f4bdc1a)
++++ app/src/main/java/com/andresvanegas/practica3/registroActivity.java	(revision )
+@@ -4,6 +4,7 @@
+ import android.support.v7.app.AppCompatActivity;
+ import android.os.Bundle;
+ import android.view.View;
++import android.view.Window;
+ import android.widget.Button;
+ import android.widget.EditText;
+ import android.widget.Toast;
+@@ -18,7 +19,9 @@
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
++        this.supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
+         setContentView(R.layout.activity_registro);
++
+ 
+         rcancelar = (Button) findViewById(R.id.rcancelar);
+         raceptar = (Button) findViewById(R.id.raceptar);
+Index: app/src/main/res/layout/activity_loggin.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_loggin.xml	(revision 3f1e8851df093f68362b571e22d936d56f4bdc1a)
++++ app/src/main/res/layout/activity_loggin.xml	(revision )
+@@ -4,13 +4,13 @@
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     tools:context="com.andresvanegas.practica3.LogginActivity"
+-    android:background="@mipmap/m1">
++    android:background="@drawable/m1">
+ 
+     <ImageView
+         android:layout_width="match_parent"
+-        android:layout_height="wrap_content"
++        android:layout_height="150dp"
+         android:id="@+id/imageView"
+-        android:background="@mipmap/pastizzerialo"
++        android:background="@drawable/pastizzerialo"
+         android:layout_alignParentBottom="true"
+         android:layout_centerHorizontal="true" />
+ 
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_main.xml	(revision 3f1e8851df093f68362b571e22d936d56f4bdc1a)
++++ app/src/main/res/layout/activity_main.xml	(revision )
+@@ -4,14 +4,14 @@
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     tools:context="com.andresvanegas.practica3.MainActivity"
+-    android:background="@mipmap/publi2"
++    android:background="@drawable/publi2"
+     android:weightSum="1">
+ 
+     <ImageView
+         android:layout_width="215dp"
+         android:layout_height="280dp"
+         android:id="@+id/imageView2"
+-        android:background="@mipmap/publi"
++        android:background="@drawable/publi"
+         android:layout_weight="0.37"
+         android:layout_gravity="bottom"
+         android:layout_alignParentBottom="true"
